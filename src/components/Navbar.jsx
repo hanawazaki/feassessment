@@ -1,6 +1,13 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
+  const [isActive, setIsActive] = useState("mp")
+
+  const handleChangeActive = (menu) => {
+    setIsActive(menu)
+  }
+
   return (
 
     <nav className="bg-white border-gray-200 dark:bg-gray-900">
@@ -17,13 +24,13 @@ export default function Navbar() {
         <div className="hidden w-full md:block md:w-auto" id="navbar-default">
           <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
             <li>
-              <Link to="/" className="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Mini Project</Link>
+              <Link to="/" onClick={() => handleChangeActive("mp")} className={`${isActive === "mp" ? 'text-blue-700' : 'text-gray-900'} block py-2 pl-3 pr-4 rounded md:bg-transparent md:p-0 md:hover:text-blue-700 md:p-0`} aria-current="page">Mini Project</Link>
             </li>
             <li>
-              <Link to="/algo1" className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Algo test 1</Link>
+              <Link to="/algo1" onClick={() => handleChangeActive("al1")} className={`${isActive === "al1" ? 'text-blue-700' : 'text-gray-900'} block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0`}>Algo test 1</Link>
             </li>
             <li>
-              <Link to="/algo2" className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Algo test 2</Link>
+              <Link to="/algo2" onClick={() => handleChangeActive("al2")} className={`${isActive === "al2" ? 'text-blue-700' : 'text-gray-900'} block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0`}>Algo test 2</Link>
             </li>
           </ul>
         </div>
