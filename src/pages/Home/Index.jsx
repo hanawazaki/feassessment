@@ -9,25 +9,8 @@ export default function Index() {
   const [newTask, setNewtask] = useState("")
 
   const handleDelete = (id) => {
-    console.log('delete', id)
     setData(prevData => {
       return prevData.filter((item) => id !== item.id
-
-
-        // {
-
-        //   // const deletedidx = id !== item.id
-
-        //   // const currentData = JSON.parse(localStorage.getItem('tasks')) || []
-
-        //   // if (deletedidx !== -1) {
-        //   //   currentData.splice(deletedidx, 1)
-        //   // }
-
-        //   // localStorage.setItem("tasks", JSON.stringify(currentData))
-
-        // }
-
       )
     })
   }
