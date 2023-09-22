@@ -60,10 +60,10 @@ export default function Index() {
     <main>
       <div className="flex flex-col justify-center gap-8">
         <h1 className="text-center text-4xl font-bold text-gray-700">
-          Task List
+          Mini Project
         </h1>
         <div className="input mx-auto flex justify-center w-[300px] mb-6">
-          <input value={newTask} onKeyUp={handleKeyUp} onChange={handleNewTask} type="text" id="first_name" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 focus:outline-none " placeholder="what are we going to do?" />
+          <input value={newTask} onKeyUp={handleKeyUp} onChange={handleNewTask} type="text" id="first_name" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 focus:outline-none " placeholder="Insert task and press enter" />
         </div>
         <div className="mx-[200px] border rounded-lg p-8">
           {
@@ -71,9 +71,7 @@ export default function Index() {
               data && data.map((item) => {
                 return (
 
-                  <>
-                    <ListTask item={item} key={item.id} handleDelete={handleDelete} />
-                  </>
+                  <ListTask item={item} key={item.id} handleDelete={handleDelete} />
                 )
               }) :
 

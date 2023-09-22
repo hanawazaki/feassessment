@@ -15,7 +15,7 @@ export default function AlgoOne() {
   }
 
   const converToArray = () => {
-    const newVal = vals.split(',') || vals.split('') || vals.split(' ')
+    const newVal = vals.split(',')
     console.log("before", newVal)
     if (newVal.length < 3) {
       alert("min 3 vals")
